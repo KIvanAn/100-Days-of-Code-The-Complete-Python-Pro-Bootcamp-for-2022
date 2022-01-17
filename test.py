@@ -1,14 +1,5 @@
-class Chain:
-    def __init__(self, number_of_items):
-        self.number_of_items = number_of_items
-
-    def __str__(self):
-        return f"Chain with {self.number_of_items} items"
-
-    def __len__(self):
-        return self.number_of_items
+def get_score(n):
+    return sum(i * 50 for i in range(1, n + 1))
 
 
-new_class = Chain(5)
-print(new_class)
-print(len(new_class))
+print(get_score(5))
