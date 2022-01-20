@@ -1,5 +1,37 @@
-def zero_plentiful(arr):
-    return len([item for item in "".join(str(num) if num == 0 else "-" for num in arr).split("-") if len(item) >= 4])
+import time
 
 
-print(zero_plentiful([0, 2, 0, 0, 0, 0, 3, 4, 5, 0, 0, 0, 0, 0]))
+def find_reverse_number(n):
+    n_list = 0
+    i = 0
+    while n_list < n:
+        if i == int(str(i)[::-1]):
+            n_list += 1
+        i += 1
+    return i - 1
+
+
+# def find_reverse_number(n):
+#     def get_reverse_number():
+#         i = 0
+#         for number in range(n):
+#             if number == int(str(number)[::-1]):
+#                 yield number
+#                 i += 1
+#     revers_num = get_reverse_number()
+#     is_stop = False
+#     # i = 0
+#     while not is_stop:
+#         try:
+#             print(next(revers_num))
+#             # next(revers_num)
+#             # i += 1
+#         except StopIteration:
+#             is_stop = True
+#
+#     return next(revers_num)
+
+
+start_time = time.time()
+print(find_reverse_number(100))
+print(time.time() - start_time)
